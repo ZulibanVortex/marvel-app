@@ -1,0 +1,28 @@
+.card-transparent {
+    background-color: rgba(4 4 4 / 40%);
+    width: 40%;
+    margin: 2% 0% 0% 10%;
+    color: white;
+}
+.card-header, .card-block {
+    padding: 1rem 3rem;
+}
+a {
+    color: #d3dae5;
+}
+.like {
+    background-color: #0BD1B9;
+}
+.dislike {
+    background-color: #E3A515;
+}
+.like i, .dislike i {
+    font-size: 35px;
+}
+.like, .dislike{
+    cursor: pointer;
+    height: 80px;
+}
+.card-footer {
+    padding: 0rem 0.8rem;
+}

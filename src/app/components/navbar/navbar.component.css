@@ -1,0 +1,13 @@
+
+.navbar {
+    background-color: transparent !important;
+    width: 75%;
+    margin: 0 auto;
+}
+
+h5 {
+    color: white;
+}
+li {
+    margin-right: 40px;
+}

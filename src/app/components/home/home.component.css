@@ -1,0 +1,25 @@
+.header {
+    background: url('https://www.xtrafondos.com/wallpapers/resized/iron-man-marvel-s-midnight-suns-8743.jpg?s=large') no-repeat center;
+    background-size: cover;
+    min-height: 75vh;
+}
+.like {
+    background-color: #0BD1B9;
+}
+.dislike {
+    background-color: #E3A515;
+}
+.results {
+    height: 142px;
+    padding: 2rem 0.7rem;
+}
+.like, .dislike {
+    opacity: 0.8;
+    height: 111px;
+}
+.like i, .dislike i {
+    font-size: 35px;
+    margin: 0 auto;
+    color: white;
+    margin-top: 5%;
+}
