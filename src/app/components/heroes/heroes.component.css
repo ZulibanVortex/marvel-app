@@ -1,0 +1,31 @@
+.card-heroe {
+    height: 500px;
+    color: white;
+}
+.font-heroe {
+    height: 100%;
+}
+.percentageVotos {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.like {
+    background: #0BD1B9;
+}
+.dislike {
+    background: #E3A515;
+}
+
+.like, .dislike {
+    height: 100%;
+    opacity: 0.7;
+}
+.iconsVots {
+    width: 15%;
+    margin-block-end: auto;
+    margin-right: 10%;
+}
+.infoHero {
+    width: 75%;
+}

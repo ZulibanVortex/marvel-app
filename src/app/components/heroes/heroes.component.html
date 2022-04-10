@@ -1,1 +1,32 @@
-<p>heroes works!</p>
+<div class="card card-heroe">
+    <img class="card-img-top font-heroe" [src]="data.imagen">            
+    <div class="card-img-overlay" style="margin-top: 40%;">
+        <div class="percentageVotos">
+            <div class="iconsVots">
+                <div style="background-color: #0BD1B9">
+                    <i class="fas fa-thumbs-up" (click)="voteHero(1)" style="font-size: 20px; margin: 18%; cursor: pointer;"></i>
+                </div>
+                <div style="background-color: #E3A515">
+                    <i class="fas fa-thumbs-down" (click)="voteHero(2)" style="font-size: 20px; margin: 18%; cursor: pointer;"></i>
+                </div>
+            </div>
+            <div class="infoHero">
+                <div class="col-sm-10 card-text" style="margin-bottom: 3%;">
+                    <h3>{{ data.nombre }}</h3>
+                    <p >
+                        {{ data.info }} 
+                    </p>
+                    <a target="_blank" [href]="data.detalle" class="btn btn-outline-light">Ver detalle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="percentageVotos">
+        <div [ngStyle]="{'width.%': calculateVotes(data.like, data.dislike, 1)}" class="like">
+            <i *ngIf="data.like > 0" class="fas fa-thumbs-up" style="float: left; font-size: 30px; margin: 3%;">&nbsp; {{data.like}}</i>
+        </div>
+        <div [ngStyle]="{'width.%': calculateVotes(data.like, data.dislike, 2)}" class="dislike">
+            <i *ngIf="data.dislike > 0" class="fas fa-thumbs-down" style="float: right; font-size: 30px; margin: 3%">&nbsp; {{data.dislike}}</i>
+        </div>
+    </div>
+</div>

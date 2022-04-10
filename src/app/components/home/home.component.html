@@ -3,18 +3,47 @@
         <div class="container">
             <header class="header">
                 <app-navbar></app-navbar>
-                <app-banner></app-banner>
+                <app-banner [data]="heroe" (load)="cargarStorageBanner"></app-banner>
                 <div class="col-xl-12 results" style="background-color: transparent;">
                     <div class="row">
-                        <div class="col-lg-6 like">
-                            <i class="fas fa-thumbs-up" style="float: right;">&nbsp;88%</i>
+                        <div *ngIf="heroe.like > 0" [ngStyle]="{'width.%': calculateVotes(heroe.like, heroe.dislike, 1)}" class="col-lg-6 like">
+                            <i class="fas fa-thumbs-up" style="float: right;">&nbsp;{{ heroe.like }}</i>
                         </div>
-                        <div class="col-lg-6 dislike">
-                            <i class="fas fa-thumbs-down">&nbsp;12%</i>
+                        <div *ngIf="heroe.dislike > 0" [ngStyle]="{'width.%': calculateVotes(heroe.like, heroe.dislike, 2)}" class="col-lg-6 dislike">
+                            <i class="fas fa-thumbs-down">&nbsp;{{ heroe.dislike }}</i>
                         </div>
                     </div>
                 </div>
             </header>
+            <div class="info mt-4">
+                <div class="heroes">
+                    <div class="card card-info border-0">
+                        <div class="card-body">
+                            <div class="col-xl-12">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <h3>Sistema de Puntuación de Heroes</h3>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="mt-4">Super Heroes Anteriores</h1>
+                    <div class="row mt-4">
+                        <app-heroes class="col-sm-6 heroes-register" *ngFor="let hero of heroes" [data]="hero" [heroes]="heroes"></app-heroes>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <app-footer></app-footer>
+            </footer>
         </div>
     </div>
 </div>

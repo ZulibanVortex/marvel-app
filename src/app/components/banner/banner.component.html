@@ -3,13 +3,13 @@
     <ng-template #viewVote>
         <div class="card-header">
             <p>Dinos tu opinión sobre</p>
-            <h1>Ironman?</h1>
+            <h1>{{ data.nombre }}</h1>
         </div>
         <div class="card-block">
             <p>
-                Iron Man posee una armadura motorizada que le da fuerza y durabilidad sobrehumanas, vuelo y una gran variedad de armas. La armadura es inventada y usada por Stark (con excepciones ocasionales a corto plazo).
+                {{ data.info }}
             </p>
-            <a href="https://es.wikipedia.org/wiki/Iron_Man" target="_blank"><i class="fab fa-wikipedia-w"></i> Más información</a>
+            <a [href]="data.detalle" target="_blank"><i class="fab fa-wikipedia-w"></i> Más información</a>
             <h5 style="margin-top: 20px;">¿Cuál es tu favorito?</h5>
         </div>
         <div class="card-footer col-xl-12">
@@ -32,9 +32,14 @@
             <h2>Marvel - Ironman</h2>
             <div class="col-xl-12" style="margin-top: 7%;">
                 <div class="row">
-                    <div class="col-lg-3" style="background-color: #0BD1B9; height: 90px;">
+                    <div *ngIf="reacStatus == 1; else dislike" class="col-lg-3" style="background-color: #0BD1B9; height: 90px;">
                         <i class="fas fa-thumbs-up" style="font-size: 50px; margin: 18%;"></i>
                     </div>
+                    <ng-template #dislike>
+                        <div class="col-lg-3" style="background-color: #E3A515; height: 90px;">
+                            <i class="fas fa-thumbs-down" style="font-size: 50px; margin: 18%;"></i>
+                        </div>
+                    </ng-template>
                     <div class="col-lg-9">
                     <h3>
                         Tu voto <br>
@@ -43,18 +48,13 @@
                     </div>
                 </div>
             </div>
-            <ng-container *ngIf="reacStatus == 1; else dislike"></ng-container>
-            <ng-template #dislike></ng-template>
-            
-            <div>
-
-            </div>
         </div>
         <div class="card-block">
-            <p>
-                Gracias! Tú like ha sido registrado exitosamente para el super heroe Ironman
-            </p>
-            
+            <p *ngIf="reacStatus == 1; else txtDisLike">Gracias! Tú like ha sido registrado exitosamente para el super heroe Ironman</p>
+            <ng-template #txtDisLike>
+                Gracias! Tú dislike ha sido registrado exitosamente para el super heroe Ironman
+            </ng-template>
+            <button (click)="voteIronMan(0)" type="button" class="btn btn-outline-primary" style="margin-top: 3%;"><i class="fas fa-angle-double-left"></i> Volver</button>
         </div>
     </ng-template>
 </div>

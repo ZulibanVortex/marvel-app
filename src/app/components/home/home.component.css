@@ -23,3 +23,23 @@
     color: white;
     margin-top: 5%;
 }
+.info {
+    width: 100%;
+}
+.card-info {
+    background-color: #c5c9c8;
+}
+.heroes {
+    width: 90%;
+    margin: 0 auto;
+}
+.heroes-register {
+    margin-bottom: 3%;
+}
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    color: #fff;
+}
